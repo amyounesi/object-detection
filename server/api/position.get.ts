@@ -1,7 +1,10 @@
-export default defineEventHandler(() => {
-    return [
-        { lat: 40.689247, lng: -74.044502,popup:false },
-      { lat: 40.689248, lng: -74.044503,popup:false },
-      { lat: 40.689249, lng: -74.044504,popup:false }
-    ]
+
+import mongoose from 'mongoose';
+import Position from '../../model/position';
+
+export default defineEventHandler(async() => {
+  mongoose.connect("mongodb://localhost:27017/OD")
+
+  return await Position.find({});
+  
 })
