@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div >
+    <div v-if="markers.length>0">
     <GoogleMap api-key="" style="width: 100%; height: 500px" :center="{ lat: parseFloat(markers[0].Latitude), lng: parseFloat(markers[0].Longitude) }" :zoom="20">
 
 <Marker @click="openInfoWindow(key)"
@@ -13,6 +14,7 @@
 </InfoWindow>
 </Marker>
 </GoogleMap>
+</div>
 <hr>
 <div class="container mx-auto mt-10">
   <div class="mt-10 sm:mt-0">
